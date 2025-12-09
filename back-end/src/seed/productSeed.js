@@ -7,7 +7,7 @@ dotenv.config();
 const categories = ["Men", "Women", "Kids"];
 const sizes = ["S", "M", "L", "XL"];
 
-const generateProducts = (count = 20) => {
+const generateProducts = (count = 25) => {
   return Array.from({ length: count }).map((_, i) => ({
     
     name: `Product ${i + 1}`,
