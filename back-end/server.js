@@ -1,7 +1,10 @@
 import express from "express";
 import connectDB from "./src/config/db.js";
 import dotenv from "dotenv";
+
 import authRoutes from "./src/routes/authRoutes.js";
+import { protect_JWT } from "./src/middleware/authMiddleware.js";
+import productRoutes from "./src/routes/productRoutes.js";
 
 dotenv.config();
 
@@ -18,3 +21,4 @@ app.listen(PORT, () => {
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/products", protect_JWT, productRoutes);
